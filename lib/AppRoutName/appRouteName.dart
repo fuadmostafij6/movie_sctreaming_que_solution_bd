@@ -1,9 +1,6 @@
-
-
-
 import 'package:flutter/material.dart';
-import 'package:mivie_stream/Screen/Home.dart';
-import 'package:mivie_stream/Screen/details.dart';
+import 'package:mivie_stream/Screen/Home/Home.dart';
+import 'package:mivie_stream/Screen/MovieDetails/details.dart';
 
 import '../Screen/getStarted.dart';
 
@@ -18,7 +15,7 @@ static const  String details= "/details";
 
   switch(settings.name){
     case AppRouteName.getStarted:
-      return MaterialPageRoute(builder: (_)=>GetStarted(),
+      return MaterialPageRoute(builder: (_)=>const GetStarted(),
       settings: settings
       );
 
@@ -26,8 +23,8 @@ static const  String details= "/details";
       return PageRouteBuilder(
 
           settings: settings,
-          pageBuilder: (_,__,___)=>Home(),
-        transitionDuration: Duration(milliseconds: 300),
+          pageBuilder: (_,__,___)=>const Home(),
+        transitionDuration: const Duration(milliseconds: 300),
         transitionsBuilder: (_, animation, ___, child){
 
             return SlideTransition(

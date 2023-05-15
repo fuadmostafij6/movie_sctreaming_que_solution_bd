@@ -89,7 +89,7 @@ class VideoStreamingApp {
 
 class ComedyShow {
   int? currentPage;
-  List<Datum>? data;
+  List<MovieDatum>? data;
   String? firstPageUrl;
   int? from;
   int? lastPage;
@@ -118,7 +118,7 @@ class ComedyShow {
 
   factory ComedyShow.fromJson(Map<String, dynamic> json) => ComedyShow(
     currentPage: json["current_page"],
-    data: json["data"] == null ? [] : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
+    data: json["data"] == null ? [] : List<MovieDatum>.from(json["data"]!.map((x) => MovieDatum.fromJson(x))),
     firstPageUrl: json["first_page_url"],
     from: json["from"],
     lastPage: json["last_page"],
@@ -147,7 +147,7 @@ class ComedyShow {
   };
 }
 
-class Datum {
+class MovieDatum {
   int? id;
   String? videoAccess;
   String? movieLangId;
@@ -176,7 +176,7 @@ class Datum {
   DateTime? updatedAt;
   String? mainApp;
 
-  Datum({
+  MovieDatum({
     this.id,
     this.videoAccess,
     this.movieLangId,
@@ -206,7 +206,7 @@ class Datum {
     this.mainApp,
   });
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+  factory MovieDatum.fromJson(Map<String, dynamic> json) => MovieDatum(
     id: json["id"],
     videoAccess: json["video_access"],
     movieLangId: json["movie_lang_id"],
